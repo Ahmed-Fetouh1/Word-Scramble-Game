@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8" />
+    <title>Word Scramble Game</title>
+    <link rel="stylesheet" href="style.css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+  </head>
+  <body>
+    <div class="container">
+      <h2>Word Scramble Game</h2>
+      <p class="num">Number Of Plays: <span id="num"></span></p>
+      <p class="score">Score: <span id="score"></span></p>
+
+      <div class="content">
+        <p id="scrambleWord"></p>
+        <div class="details">
+          <p>Hint: <span id="hint"></span></p>
+          <p>Time Left: <b id="timer"></b>s</p>
+        </div>
+        <input
+          type="text"
+          spellcheck="false"
+          placeholder="Enter a valid word"
+          id="inputWord"
+        />
+        <div class="buttons">
+          <button id="refreshWord">Refresh Word</button>
+          <button id="checkWord">Check Word</button>
+        </div>
+      </div>
+    </div>
+    <script src="js/words.js"></script>
+    <script src="js/script.js"></script>
+  </body>
+</html>

@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Game Start Page</title>
+    <link rel="stylesheet" href="gameStyle.css" />
+  </head>
+  <body>
+    <div class="container">
+      <h1 class="animated-text">
+        <span class="word">Welcome</span>
+        <span class="word">To</span>
+        <span class="word">Word Scramble</span>
+        <span class="word game-text">Game🧩!</span>
+      </h1>
+      <button id="startButton">Start The Game</button>
+    </div>
+    <br />
+
+    <!-- Footer section -->
+    <div class="footer">
+      <div class="social">
+        <a target="_blank" href="https://www.facebook.com/ahmed.fetouh.7798/">
+          Facebook
+        </a>
+        <a target="_blank" href="https://github.com/Ahmed-Fetouh1">Github</a>
+        <a target="_blank" href="https://codepen.io/your-work">Codepen</a>
+      </div>
+      <p class="copyright">Made With Love By <b>Ahmed Fetouh &copy 2023</b></p>
+    </div>
+    <script>
+      const words = document.querySelectorAll(".word");
+      let currentWordIndex = 0;
+
+      function showNextWord() {
+        if (currentWordIndex < words.length) {
+          words[currentWordIndex].style.opacity = 1;
+          currentWordIndex++;
+          setTimeout(hideCurrentWord, 500);
+        }
+      }
+
+      function hideCurrentWord() {
+        if (currentWordIndex > 0) {
+          words[currentWordIndex - 1].style.opacity = 0.9;
+          setTimeout(showNextWord, 250);
+        }
+      }
+
+      // Start the animation
+      showNextWord();
+
+      document
+        .getElementById("startButton")
+        .addEventListener("click", function () {
+          window.location.href = "game.html";
+        });
+    </script>
+  </body>
+</html>
